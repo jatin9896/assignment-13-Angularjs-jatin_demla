@@ -12,7 +12,7 @@ export class Showtaskcomponent implements OnInit {
 
  detail: Detail[]
 
- constructor(private service: DetailService) {
+ constructor(private service: DetailService, private router:Router) {
   this.detail = this.service.detail
  }
 
@@ -27,6 +27,6 @@ export class Showtaskcomponent implements OnInit {
 
  edit(index: number) {
   alert("edit Press On index " + index);
-
+  this.router.navigate(['createtask'],2);
  }
 }

@@ -11,13 +11,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var detail_1 = require('../detail');
 var detail_service_1 = require('../detail.service');
+var router_1 = require("@angular/router");
 var Createtaskcomponent = (function () {
-    function Createtaskcomponent(service) {
+    function Createtaskcomponent(service, route, router) {
         this.service = service;
+        this.route = route;
+        this.router = router;
         this.detail = this.service.detail;
     }
     Createtaskcomponent.prototype.ngOnInit = function () {
+        var _this = this;
         this.detail = this.service.detail;
+        this.route.params.subscribe(function (data) {
+            console.log("index is :" + _this.index + "data : " + JSON.stringify(data) + "data id : " + data.id);
+            _this.index = +data.id;
+            alert("index is :" + _this.index + "data : " + JSON.stringify(data) + "data id : " + data.id);
+        });
     };
     Createtaskcomponent.prototype.submit = function (date, title, desc, priority, event) {
         event.preventDefault();
@@ -39,7 +48,7 @@ var Createtaskcomponent = (function () {
             templateUrl: './app/createtask/createtask.component.html',
             styleUrls: ['']
         }), 
-        __metadata('design:paramtypes', [detail_service_1.DetailService])
+        __metadata('design:paramtypes', [detail_service_1.DetailService, router_1.ActivatedRoute, router_1.Router])
     ], Createtaskcomponent);
     return Createtaskcomponent;
 }());

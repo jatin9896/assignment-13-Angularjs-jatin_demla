@@ -10,9 +10,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var detail_service_1 = require('../detail.service');
+var router_1 = require('@angular/router');
 var Showtaskcomponent = (function () {
-    function Showtaskcomponent(service) {
+    function Showtaskcomponent(service, router) {
         this.service = service;
+        this.router = router;
         this.detail = this.service.detail;
     }
     Showtaskcomponent.prototype.ngOnInit = function () {
@@ -24,6 +26,7 @@ var Showtaskcomponent = (function () {
     };
     Showtaskcomponent.prototype.edit = function (index) {
         alert("edit Press On index " + index);
+        this.router.navigate(['createtask'], 2);
     };
     Showtaskcomponent = __decorate([
         core_1.Component({
@@ -31,7 +34,7 @@ var Showtaskcomponent = (function () {
             templateUrl: './app/showtask/showtask.component.html',
             styleUrls: [''],
         }), 
-        __metadata('design:paramtypes', [detail_service_1.DetailService])
+        __metadata('design:paramtypes', [detail_service_1.DetailService, router_1.Router])
     ], Showtaskcomponent);
     return Showtaskcomponent;
 }());
