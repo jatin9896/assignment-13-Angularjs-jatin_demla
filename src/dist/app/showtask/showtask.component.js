@@ -18,6 +18,13 @@ var Showtaskcomponent = (function () {
     Showtaskcomponent.prototype.ngOnInit = function () {
         this.detail = this.service.detail;
     };
+    Showtaskcomponent.prototype.delete = function (index) {
+        alert("delete Press On index " + index);
+        this.service.detail.splice(index, 1);
+    };
+    Showtaskcomponent.prototype.edit = function (index) {
+        alert("edit Press On index " + index);
+    };
     Showtaskcomponent = __decorate([
         core_1.Component({
             selector: 'showtask',

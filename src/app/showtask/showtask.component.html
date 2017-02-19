@@ -11,17 +11,19 @@
         <th>Date</th>
         <th>Description</th>
         <th>Priority</th>
+        <th>Index Value</th>
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor = "let d of detail">
-        <td><button>Edit</button></td>
+    <tr *ngFor = "let d of detail; let i=index" >
+        <td><button type="submit" (click)="edit(i)">Edit</button></td>
         <td>
-            <button type="submit" (click)="delete()">Delete</button> </td>
+            <button type="submit" (click)="delete(i)">Delete</button> </td>
         <td>{{d.title}}</td>
         <td>{{d.date}}</td>
         <td>{{d.description}}</td>
         <td>{{d.priority}}</td>
+        <td>{{i}}</td>
     </tr>
     </tbody>
 </table>
