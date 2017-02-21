@@ -10,16 +10,29 @@ import {ActivatedRoute, Router} from "@angular/router";
 export class Createtaskcomponent implements OnInit {
  detail: Detail[]
  index:number;
+ details:Detail=new Detail();
+ 
  constructor(private service: DetailService, private route: ActivatedRoute, private router:Router) {
   this.detail = this.service.detail
  }
 
  ngOnInit() {
+ this.details.date="";
+ this.details.title="";
+ this.details.description="";
+  this.details.priority=0;
+ 
   this.detail = this.service.detail
+
   this.route.params.subscribe((data: any) => {
-   console.log("index is :"+this.index+"data : "+JSON.stringify(data)+"data id : "+data.id);
+   
    this.index = +data.id;
+   alert(this.index)
+  if(this.index){
+  // console.log("index is :"+this.index+"data : "+JSON.stringify(data)+"data id : "+data.id);
+   this.details=this.service.detail[this.index-1];
    alert("index is :"+this.index+"data : "+JSON.stringify(data)+"data id : "+data.id);
+  }
   });
  }
 

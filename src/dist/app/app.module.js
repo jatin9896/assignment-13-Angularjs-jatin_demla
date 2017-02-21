@@ -16,12 +16,14 @@ var app_routes_1 = require("./app.routes");
 var createtask_component_1 = require("./createtask/createtask.component");
 var showtask_component_1 = require("./showtask/showtask.component");
 var detail_service_1 = require("./detail.service");
+var forms_1 = require("@angular/forms");
+var common_1 = require("@angular/common");
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, router_1.RouterModule.forRoot(app_routes_1.routes)],
+            imports: [platform_browser_1.BrowserModule, router_1.RouterModule.forRoot(app_routes_1.routes), forms_1.FormsModule, common_1.CommonModule],
             declarations: [app_component_1.AppComponent, createtask_component_1.Createtaskcomponent, showtask_component_1.Showtaskcomponent],
             bootstrap: [app_component_1.AppComponent],
             providers: [detail_service_1.DetailService]

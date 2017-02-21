@@ -17,15 +17,24 @@ var Createtaskcomponent = (function () {
         this.service = service;
         this.route = route;
         this.router = router;
+        this.details = new detail_1.Detail();
         this.detail = this.service.detail;
     }
     Createtaskcomponent.prototype.ngOnInit = function () {
         var _this = this;
+        this.details.date = "";
+        this.details.title = "";
+        this.details.description = "";
+        this.details.priority = 0;
         this.detail = this.service.detail;
         this.route.params.subscribe(function (data) {
-            console.log("index is :" + _this.index + "data : " + JSON.stringify(data) + "data id : " + data.id);
             _this.index = +data.id;
-            alert("index is :" + _this.index + "data : " + JSON.stringify(data) + "data id : " + data.id);
+            alert(_this.index);
+            if (_this.index) {
+                // console.log("index is :"+this.index+"data : "+JSON.stringify(data)+"data id : "+data.id);
+                _this.details = _this.service.detail[_this.index - 1];
+                alert("index is :" + _this.index + "data : " + JSON.stringify(data) + "data id : " + data.id);
+            }
         });
     };
     Createtaskcomponent.prototype.submit = function (date, title, desc, priority, event) {

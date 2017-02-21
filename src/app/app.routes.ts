@@ -9,6 +9,6 @@ export const routes =[{
     path: 'showtask',
     component: Showtaskcomponent
 },{
-   path: '',
-    component: AppComponent
+     path:'createtask/:id',
+    component: Createtaskcomponent
 }]

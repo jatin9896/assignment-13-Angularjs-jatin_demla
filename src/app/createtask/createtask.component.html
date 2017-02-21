@@ -5,25 +5,25 @@
   <div class="form-group">
     <label class="control-label col-sm-2">Date:</label>
     <div class="col-sm-6">
-      <input class="form-control" placeholder="Date" #date>
+      <input class="form-control" placeholder="Date" #date [(ngModel)]="details.date" name="date" >
     </div>
   </div>
   <div class="form-group">
     <label class="control-label col-sm-2" >Title:</label>
     <div class="col-sm-6"> 
-      <input class="form-control" placeholder="Title" #title>
+      <input class="form-control" placeholder="Title" #title [(ngModel)]="details.title"  name="title" >
     </div>
   </div>
     <div class="form-group">
     <label class="control-label col-sm-2" >Description:</label>
     <div class="col-sm-6"> 
-      <input class="form-control" placeholder="Description" #desc>
+      <input class="form-control" placeholder="Description" [(ngModel)]="details.description" name="description" #desc>
     </div>
   </div>
     <div class="form-group">
     <label class="control-label col-sm-2" >Priority:</label>
     <div class="col-sm-6"> 
-      <input class="form-control"  placeholder="Priority" #priority>
+      <input class="form-control"  placeholder="Priority" [(ngModel)]="details.priority" name="priority" #priority>
     </div>
   </div>
   <div class="form-group"> 

@@ -27,6 +27,6 @@ export class Showtaskcomponent implements OnInit {
 
  edit(index: number) {
   alert("edit Press On index " + index);
-  this.router.navigate(['createtask'],2);
+  this.router.navigate(['createtask',index+1]);
  }
 }

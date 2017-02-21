@@ -26,7 +26,7 @@ var Showtaskcomponent = (function () {
     };
     Showtaskcomponent.prototype.edit = function (index) {
         alert("edit Press On index " + index);
-        this.router.navigate(['createtask'], 2);
+        this.router.navigate(['createtask', index + 1]);
     };
     Showtaskcomponent = __decorate([
         core_1.Component({

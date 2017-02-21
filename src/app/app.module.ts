@@ -9,9 +9,11 @@ import {Showtaskcomponent} from "./showtask/showtask.component"
 import {} from "./detail.service"
 import {DetailService} from "./detail.service";
 import {Detail} from "./detail"
+import {FormsModule} from "@angular/forms"
+import {CommonModule} from "@angular/common"
 
 @NgModule({
-  imports:      [ BrowserModule, RouterModule.forRoot(routes) ],
+  imports:      [ BrowserModule, RouterModule.forRoot(routes), FormsModule, CommonModule ],
   declarations: [ AppComponent , Createtaskcomponent , Showtaskcomponent ],
   bootstrap:    [ AppComponent ],
   providers : [ DetailService ]
